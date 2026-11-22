@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KDash — Official</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #0a0a0f;
+      color: #e8e8ed;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 10, 15, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo span {
+      background: linear-gradient(135deg, #7c5cff, #00d4ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    nav a {
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    /* Hero */
+    .hero {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 6rem 2rem 5rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 8vw, 4.2rem);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, #7c5cff, #00d4ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.7;
+      max-width: 540px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #7c5cff, #5b8cff);
+      color: white;
+      font-weight: 600;
+      padding: 0.9rem 2.2rem;
+      border-radius: 999px;
+      font-size: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(124, 92, 255, 0.35);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(124, 92, 255, 0.5);
+    }
+
+    /* Features */
+    .features {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 2rem 5rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+      letter-spacing: -0.5px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 1.75rem;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .feature-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(124, 92, 255, 0.3);
+    }
+
+    .feature-card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      opacity: 0.65;
+    }
+
+    /* About */
+    .about {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+      text-align: center;
+    }
+
+    .about p {
+      font-size: 1.1rem;
+      opacity: 0.7;
+      margin-bottom: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.5;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header {
+        padding: 1rem 1.25rem;
+      }
+
+      nav {
+        gap: 1.25rem;
+        font-size: 0.9rem;
+      }
+
+      .hero {
+        padding: 4rem 1.25rem 3.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <span>KDash</span>
+    </div>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Play levels.<br><span>Feel the beat.</span></h1>
+    <p>
+      KDash is a web-based rhythm platformer inspired by Geometry Dash.
+      Jump, dash, and sync to the music — right in your browser.
+    </p>
+    <a href="#" class="btn">Install KDash</a>
+  </section>
+
+  <section class="features" id="features">
+    <h2 class="section-title">Why KDash?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>Browser Native</h3>
+        <p>No downloads. Just open the site and play instantly on any device.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Music Sync</h3>
+        <p>Levels are tightly timed to the beat. Every jump feels connected to the song.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Custom Levels</h3>
+        <p>Built with song and HTML integration so you can create and share your own experiences.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Simple & Fast</h3>
+        <p>Lightweight design focused on pure gameplay. No bloat, just rhythm.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2 class="section-title">About KDash</h2>
+    <p>
+      KDash is a passion project that brings the Geometry Dash experience to the web.
+      It combines tight platforming with music-driven gameplay in a clean, accessible format.
+    </p>
+    <p>
+      Currently in active development. More levels, features, and polish coming soon.
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2026 KDash · Built with care</p>
+  </footer>
+
+</body>
+</html>
